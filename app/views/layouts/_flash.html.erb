@@ -1,7 +1,7 @@
 <% flash.each do |name, msg| %>
   <% bootstrap_class = bootstrap_class_for(name) %>
   <div class="alert <%= bootstrap_class %>">
-    <button class="close" data-dismiss="alert">x</button>
+    <button class="close">x</button>
     <%= msg %>
   </div>
 <% end %>
