@@ -14,32 +14,32 @@
   <% if !@movie.image.nil? %>
     <%= image_tag @movie.image.url(:medium), id: 'movie_img' %>
   <% end %>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :length %><br>
-    <%= f.text_field :length %>
+    <%= f.text_field :length, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :director %><br>
-    <%= f.text_field :director %>
+    <%= f.text_field :director, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :rating %><br>
-    <%= f.text_field :rating %>
+    <%= f.number_field :rating, min: 1, max: 5, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :image %><br>
-    <%= f.file_field :image %>
+    <%= f.file_field :image, class: 'form-control' %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit "Upload New Movie", class: 'form-control' %>
   </div>
 <% end %>

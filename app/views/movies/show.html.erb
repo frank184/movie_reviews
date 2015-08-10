@@ -1,8 +1,10 @@
 <div class="panel panel-default">
   <div class="panel-body">
     <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="col-lg-6">
         <%= image_tag @movie.image.url(:medium), id: 'movie_img', class: 'img-responsive' %>
+        <div class="star-rating" data-score=<%=@average_reviews %>></div>
+        <em><%= "#{@reviews.length} reviews" %></em>
       </div>
       <div class="table-responsive col-lg-6">
         <table class="table">
@@ -27,16 +29,35 @@
               <td><strong>Rating:</strong></td>
               <td><%= @movie.rating %></td>
             </tr>
-            <tr>
-              <td>
-                <%= link_to 'Edit', edit_movie_path(@movie) %> |
-                <%= link_to 'Back', movies_path %>
-              </td>
-              <td></td>
-            </tr>
           </tbody>
         </table>
+        <% if @reviews.blank? %>
+          <h3>No review just yet, would you like to add the first!?</h3>
+        <% else %>
+          <h3>Reviews:</h3>
+          <% @reviews.each do |review| %>
+            <div class="review">
+              <div class="star-rating" data-score=<%= review.rating %>></div>
+              <p><%= review.comment %> <%= link_to review.user.email, nil %></p>
+            </div>
+          <% end %>
+        <% end %>
+        <%= button_to 'Add a Review', new_movie_review_path(@movie), class: 'btn btn-danger', method: :get %>
       </div>
     </div>
   </div>
+  <div class="panel-footer">
+    <%= link_to 'Edit', edit_movie_path(@movie) %> |
+    <%= link_to 'Back', movies_path %>
+  </div>
 </div>
+
+<script>
+  $('.star-rating').raty({
+    path:'/assets/',
+    readOnly: true,
+    score: function(){
+      return $(this).attr('data-score');
+    }
+  });
+</script>

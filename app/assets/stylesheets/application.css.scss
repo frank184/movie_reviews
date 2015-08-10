@@ -14,77 +14,85 @@
  *= require_self
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
- @import "font-awesome-sprockets";
- @import "font-awesome";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
- body {
-   overflow-y: scroll;
-   background: #AA3847;
-   margin-top: 71px;
+body {
+ overflow-y: scroll;
+ background: #AA3847;
+ margin-top: 71px;
+}
+
+.review-title {
+ margin-bottom: 20px;
+}
+
+.reviews {
+ padding: 15px 0;
+ border-bottom: 1px solid #EAEAEA;
+ .star-rating {
+   padding-bottom: 8px;
  }
+}
 
- .review-title {
-   margin-bottom: 20px;
+button {
+ outline: none;
+}
+
+table {
+ tr{
+
  }
+}
 
- .reviews {
-   padding: 15px 0;
-   border-bottom: 1px solid #EAEAEA;
-   .star-rating {
-     padding-bottom: 8px;
-   }
+a {
+ &:hover {
+   color: #666;
+   background: none;
+   text-decoration: none;
  }
-
- button {
-   outline: none;
+ &:visited {
+   color: #337ab7;
  }
-
- table {
-   tr{
-
-   }
- }
-
- a {
-   &:hover {
-     color: #666;
-     background: none;
-     text-decoration: none;
-   }
-   &:visited {
-     color: #337ab7;
-   }
-   &:active {
-     border: none;
-   }
- }
-
- .alert {
-   border-radius: 0;
-   margin-top: -20px;
- }
-
- .alert-info {
-   color: rgba(75,150,75,1);
-   background-color: rgba(200,255,200,1);
+ &:active {
    border: none;
  }
+}
 
- .close {
-   font-size: 26px;
-   line-height: .6;
- }
+.alert {
+ border-radius: 0;
+ margin-top: -20px;
+}
 
- .thumbnail {
-   transition: none;
-   &:hover {
-     background-color: #337AB7;
-     border: 1px solid #337ab7;
-     img {
-       opacity: .75;
-     }
+.alert-info {
+ color: rgba(75,150,75,1);
+ background-color: rgba(200,255,200,1);
+ border: none;
+}
+
+.close {
+ font-size: 26px;
+ line-height: .6;
+}
+
+.thumbnail {
+ transition: none;
+ &:hover {
+   background-color: #337AB7;
+   border: 1px solid #337ab7;
+   img {
+     opacity: .75;
    }
  }
+}
+
+.navbar-brand {
+  font-weight: 700;
+}
+
+.jumbotron {
+  border-radius: 0 !important;
+}
