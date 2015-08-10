@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :movies do
     collection do
       get 'search'
+      get 'autocomplete'
     end
     resources :reviews, except: [:show, :index]
   end

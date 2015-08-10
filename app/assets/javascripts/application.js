@@ -14,9 +14,9 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require twitter/typeahead.min
 //= require_tree .
 $(function(){
   $('.close').click(function(){$('.alert').fadeOut(500);});
-  setTimeout(function(){$('.alert').fadeOut(500)},5000);
   $('.searchbar').blur(function(){this.innerHTML=""});
 });
