@@ -17,4 +17,6 @@
 //= require_tree .
 $(function(){
   $('.close').click(function(){$('.alert').fadeOut(500);});
+  setTimeout(function(){$('.alert').fadeOut(500)},4000);
+  $('.searchbar').blur(function(){this.innerHTML=""});
 });
