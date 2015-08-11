@@ -32,14 +32,14 @@
   </div>
   <div class="form-group">
     <%= f.label :rating %><br>
-    <%= f.number_field :rating, min: 1, max: 5, class: 'form-control' %>
+    <%= f.text_field :rating, class: 'form-control' %>
   </div>
 
   <div class="form-group">
     <%= f.label :image %><br>
-    <%= f.file_field :image, class: 'form-control' %>
+    <%= f.file_field :image, class: '' %>
   </div>
   <div class="form-group">
-    <%= f.submit "Upload New Movie", class: 'form-control' %>
+    <%= f.submit "Upload New Movie", class: 'btn btn-primary btn-lg clearfix' %>
   </div>
 <% end %>
