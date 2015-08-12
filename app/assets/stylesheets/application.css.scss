@@ -55,7 +55,7 @@ a {
    text-decoration: none;
  }
  &:visited {
-   color: #337ab7;
+   color: none;
  }
  &:active {
    border: none;
@@ -103,4 +103,8 @@ a {
 
 .btn-lg {
   min-width: 100px;
+}
+
+.btn-primary {
+  color: #fff;
 }
